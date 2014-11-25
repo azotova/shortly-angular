@@ -5,9 +5,11 @@ var request = require('request'),
 
 module.exports = {
   getUrlTitle: function(url) {
+    console.log("I am in getURL", url)
     var defer = Q.defer();
     request(url, function(err, res, html) {
       if (err) {
+        console.log("I am facing an error")
         defer.reject(err);
       } else {
         var tag = /<title>(.*)<\/title>/;

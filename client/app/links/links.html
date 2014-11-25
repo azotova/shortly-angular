@@ -1,10 +1,9 @@
-<div id='container' ng-controller='LinksController'>
-
-	<input> {{link}} </input>
-  <!-- Your html here -->
-  <!-- <input ng-model="linky" placeholder="Enter a link"></input> -->
-  <!-- <button class="button raised green" ng-click="addTodo(linky)">add todo</button> -->
-  
-
-<!--   <input ng-model="link" placeholder="Enter a link"></input> -->
+<div id='container' ng-controller = "LinksController">
+<input ng-model="search.url">
+	<ul>
+      <li ng-repeat="link in data.links | filter:search ">
+        {{ link.url}} {{ link.code }}
+      </li>
+    </ul>
+<a href="#/shorten">Go to shorten</a>
 </div>

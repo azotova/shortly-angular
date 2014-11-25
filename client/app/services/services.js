@@ -13,8 +13,30 @@ angular.module('shortly.services', [])
       });
     }
 
+    var addLink = function(link) {
+      console.log("link", link);
+      
+      return $http.post('/api/links',
+        {url: link
+      })
+      /*.then(function(res) {
+        return res.data;
+      });*/
+    }
+    
+    var getCode = function (code) {
+      return $http({
+        method: 'GET',
+        url: '/api/links',
+        code: code
+      })
+    }
+
+
     return {
-      getLinks: getLinks
+      getLinks: getLinks,
+      addLink: addLink,
+      getCode: getCode
     }
 
 })

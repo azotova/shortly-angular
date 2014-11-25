@@ -33,12 +33,14 @@ module.exports = {
   },
 
   newLink: function (req, res, next) {
+    console.log("I am in new link");
     var url = req.body.url;
-    console.log(req.body);
+    console.log("body", req.body);
     if (!util.isValidUrl(url)) {
+      console.log ("Where am I");
       return next(new Error('Not a valid url'));
     }
-
+    
     var createLink = Q.nbind(Link.create, Link);
     var findLink = Q.nbind(Link.findOne, Link);
 
@@ -47,6 +49,7 @@ module.exports = {
         if (match) {
           res.send(match);
         } else {
+          console.log("whaturl", url);
           return  util.getUrlTitle(url);
         }
       })
