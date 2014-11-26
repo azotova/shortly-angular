@@ -5,7 +5,12 @@ angular.module('shortly.shorten', [])
   $scope.link = {};
 
   angular.extend($scope, Links);
-  console.log("loc", $location);
-
+  /*console.log("loc", $location.$$url, $location);
+  var code = $location.$$url.substring(9);
+  console.log(code, "code");
+  if ($location.$$url.substring(9)) {
+    $scope.getCode(code);
+  }
+*/
 
 });

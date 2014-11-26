@@ -2,8 +2,11 @@
 <input ng-model="search.url">
 	<ul>
       <li ng-repeat="link in data.links | filter:search ">
-        {{ link.url}} {{ link.code }}
+        {{ link.url}} {{link.visits}}
+        <a href="api/links/{{link.code}}" >{{ link.base_url+"/"+link.code }}</a>
       </li>
     </ul>
 <a href="#/shorten">Go to shorten</a>
 </div>
+
+<!-- http://stackoverflow.com/questions/23867916/using-ng-repeat-to-show-json-data-fetched-from-database -->

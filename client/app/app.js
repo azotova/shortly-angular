@@ -28,6 +28,9 @@ angular.module('shortly', [
     });
     // Your code here
 
+   /* instead one usually uses $stateProvider; it is based on the state; one url can have many states, which are nested;
+    ($stateProvider, $urlRouterProvider, $httpProvider)*/
+
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls
     $httpProvider.interceptors.push('AttachTokens');

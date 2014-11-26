@@ -5,6 +5,7 @@ var Link    = require('./linkModel.js'),
 
 module.exports = {
   findUrl: function (req, res, next, code) {
+    console.log("in find Url, code", code);
     var findLink = Q.nbind(Link.findOne, Link);
     findLink({code: code})
       .then(function (link) {

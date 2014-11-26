@@ -1,7 +1,6 @@
-<div id='container' >
-<!-- Your code here -->
-<input ng-model="link" ></input>
-<button class="button raised green" ng-click="addLink(link)">add link</button>
+<div id='container' ng-controller = "ShortenController">
+<input type = "text" ng-model="linky" >
+<button class="button raised green" ng-click="addLink(linky)">add link</button>
 <a href="#/links">Go to links</a>
 </div>
 

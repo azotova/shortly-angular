@@ -24,19 +24,19 @@ angular.module('shortly.services', [])
       });*/
     }
     
-    var getCode = function (code) {
+    /*var getCode = function (code) {
       return $http({
         method: 'GET',
         url: '/api/links',
         code: code
       })
     }
-
+*/
 
     return {
       getLinks: getLinks,
-      addLink: addLink,
-      getCode: getCode
+      addLink: addLink
+//      getCode: getCode
     }
 
 })
